@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <title>Dashboard</title>
 </head>
 <body>
@@ -21,16 +22,23 @@
         </nav>
     </aside>
     <main>
-        <div class="distance"></div>
+        <div class="distance">
+            <h2>Distance</h2>
+            <canvas width="1350" height="200" id="myChart"></canvas>
+        </div>
+        <div class="alert"></div>
         <div class="calendar"></div>
         <div class="daily"></div>
-        <div class="objectif"></div>
-        <div class="sleep"></div>
+        <div class="objective"></div>
+        <div class="calc"></div>
+        <div class="sleep">
+            <canvas width="450" height="230" id="sleepChart"></canvas>
+        </div>
         <div class="sport"></div>
         <div class="daily_sport"></div>
-        <div class="alert"></div>
-        <div class="calc"></div>
         <div class="note"></div>
     </main>
+    <script src="assets/js/distance.js"></script>
+    <script src="assets/js/sleep.js"></script>
 </body>
 </html>

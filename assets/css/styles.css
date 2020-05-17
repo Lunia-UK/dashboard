@@ -51,9 +51,11 @@ table {
 
 body{
     box-sizing: border-box;
-    background-color: #0A1420;
     display: flex;
     flex-flow: row wrap;
+    background-color: rgb(10, 20, 32);
+    color: rgb(255, 255, 255);
+    font-family: sans-serif;
 }
 
 header{
@@ -66,9 +68,49 @@ main{
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
         "distance distance distance alert"
-        "calendar daily objectif calc"
+        "calendar daily objective calc"
         "sleep sport daily_sport note" ;
-    width: 95%;
+    width: 92%;
+}
+
+.distance{
+    grid-area: distance;
+    width: 100%;
+}
+
+.alert{
+    grid-area: alert;
+}
+
+.calendar{
+    grid-area: calendar;
+}
+
+.daily{
+    grid-area: daily;
+}
+
+.objective{
+    grid-area: objective;
+}
+
+.calc{
+    grid-area: calc;
+}
+
+.sleep{
+    grid-area: sleep;
+}
+
+.sport{
+    grid-area: sport;
+}
+.daily_sport{
+    grid-area: daily_sport;
+}
+
+.note{
+    grid-area: note;
 }
 
 nav {
@@ -81,7 +123,11 @@ nav {
 }
 
 aside{
-    width: 5%;
+    width: 8%;
     height: 92vh;
 }
 
+h2{
+    font-size: 1.2vw;
+    margin: 1% 0;
+}
