@@ -26,19 +26,45 @@
             <h2>Distance</h2>
             <canvas width="1350" height="200" id="myChart"></canvas>
         </div>
-        <div class="alert"></div>
+        <div class="alert">
+            <div class="containerAlert">
+                <img class="bell" src="assets/svg/bell.svg" alt="Bell">
+            </div>
+            
+        </div>
         <div class="calendar"></div>
         <div class="daily"></div>
         <div class="objective"></div>
         <div class="calc"></div>
         <div class="sleep">
+            <h2 class="center">Sleep</h2>
             <canvas width="450" height="230" id="sleepChart"></canvas>
         </div>
-        <div class="sport"></div>
+        <div class="sport">
+            <div class="containerGraphSkills">
+                <div class="containerSkills">
+                    <div class="skills bike"></div>
+                    <img src="assets/svg/blueBike.svg" alt="Blue bike"/>
+                </div> 
+                <div class="containerSkills">
+                    <div class="skills walking"></div>
+                    <img src="assets/svg/walking.svg" alt="Walking"/>
+                </div>
+                <div class="containerSkills">
+                    <div class="skills medit"></div>
+                    <img src="assets/svg/medit.svg" alt="Meditation"/>
+                </div> 
+                <div class="containerSkills">
+                    <div class="skills running"></div>
+                    <img src="assets/svg/running.svg" alt="Running"/>
+                </div> 
+            </div>
+        </div>
         <div class="daily_sport"></div>
         <div class="note"></div>
     </main>
     <script src="assets/js/distance.js"></script>
     <script src="assets/js/sleep.js"></script>
+    <script src="assets/js/sport.js"></script>
 </body>
 </html>

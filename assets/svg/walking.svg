@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24.752" height="35.702" viewBox="0 0 24.752 35.702">
+  <defs>
+    <filter id="walking-solid" x="0" y="0" width="24.752" height="35.702" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+      <feFlood flood-color="#00ff90" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#walking-solid)">
+    <path id="walking-solid-2" data-name="walking-solid" d="M11.885,5.475A2.737,2.737,0,1,0,9.148,2.737,2.738,2.738,0,0,0,11.885,5.475Zm5.389,8.5L15.946,13.3l-.553-1.677A6.218,6.218,0,0,0,9.564,7.3c-2.053-.006-3.188.576-5.321,1.437a5.44,5.44,0,0,0-2.834,2.635l-.382.776a1.831,1.831,0,0,0,.81,2.446,1.8,1.8,0,0,0,2.424-.815L4.643,13a1.813,1.813,0,0,1,.941-.878l1.528-.616L6.245,14.97a3.663,3.663,0,0,0,.85,3.353l3.416,3.73a3.68,3.68,0,0,1,.85,1.58l1.044,4.18a1.825,1.825,0,1,0,3.541-.884L14.68,21.853a3.648,3.648,0,0,0-.85-1.58l-2.595-2.834.981-3.918.314.941a3.637,3.637,0,0,0,1.808,2.11l1.329.673a1.8,1.8,0,0,0,2.424-.815,1.846,1.846,0,0,0-.815-2.452ZM4.221,22a3.539,3.539,0,0,1-.81,1.226L.56,26.084a1.825,1.825,0,0,0,2.578,2.583L6.525,25.28a3.707,3.707,0,0,0,.81-1.226l.77-1.928C4.951,18.688,5.9,19.743,5.4,19.064L4.221,22Z" transform="translate(-0.03)" fill="#00ff90"/>
+  </g>
+</svg>
