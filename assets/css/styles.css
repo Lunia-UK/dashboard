@@ -29,7 +29,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
 	list-style: none;
@@ -53,16 +53,22 @@ body{
     box-sizing: border-box;
     display: flex;
     flex-flow: row wrap;
-    background-color: rgb(10, 20, 32);
+    background: url(../img/background.png);
     color: #fff;
-    font-family: Open Sans;
+    font-family: sans-serif;
 }
 
 header{
     width: 100%;
     height: 8vh;
 }
+
 main{
+    display: flex;
+    justify-content: center;
+    width: 92%;
+}
+.mainHomne{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -70,16 +76,14 @@ main{
         "distance distance distance alert"
         "calendar daily objective calc"
         "sleep sport daily_sport note" ;
-    width: 92%;
 }
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 1200px){
     main{
         display: grid;
         grid-template-columns: 1fr ;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas:
             "distance" "alert" "calendar" "daily" "objective" "calc" "sleep" "sport" "daily_sport" "note" ;
-        width: 92%;
     }
 }
 
@@ -119,10 +123,35 @@ main{
 }
 .daily_sport{
     grid-area: daily_sport;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
+.daily_sport p {
+    position: absolute;
+}
+
+.goalBartitle:nth-of-type(1) {
+  top:8%;
+  left: 43%;
+  color: #00aeff;
+}
+.goalBartitle:nth-of-type(2) {
+    top:15%;
+    left: 44%;
+    color: #FFA200;
+  }
+
+  .goalBartitle:nth-of-type(3) {
+    top:22%;
+    left: 38%;
+    color: #C75EC3;
+  }
 
 .note{
     grid-area: note;
+    display: flex;
+    justify-content: center;
 }
 
 nav {
@@ -146,6 +175,19 @@ h2{
 
 .center{
     text-align: center;
+}
+
+.inline{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1vw;
+    cursor: pointer;
 }
 
 .containerGraphSkills{
@@ -186,3 +228,72 @@ h2{
   .bell {
       margin: 10%
   }
+
+input[type="text"]{
+    color: #fff;
+    background: none;
+    border : none;
+    border-bottom: 1px solid #fff;
+}
+  .toDoList{
+    width: 80%;
+}
+
+  .toDoList li{
+    padding: 10px;
+    border-bottom: solid 1px #fff
+  }
+
+.calendar img {
+    width: 80%;
+}
+
+.calendarContainer{
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    width: 80%;
+}
+
+.calendarHeader{
+    width: 100%;
+    justify-content: center;
+    margin: 3vh 0 5vh;
+    font-size: 1.2vw;
+}
+
+.calendar tbody tr{
+    height: 10vh;
+}
+
+.calendar .head{
+    height: 4vh;
+}
+
+.calendar td{
+    width: 1%;
+    border: solid 1px #fff;
+    padding: 1%;
+}
+
+.cell{
+    width: 7vw;
+    height: 7vh;
+}
+
+.divText{
+    width: 7.5vw;
+    height: 6vh;
+    word-wrap: break-word;
+    overflow-y: auto;
+}
+
+.formJumpTo{
+    position: absolute;
+    top: 2%;
+    right: 10%;
+}
+#goalBar{
+
+    transform: rotate(-90deg);
+}
