@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <title>Dashboard</title>
+    <style>
+        
+    </style>
 </head>
 <body>
     <header></header>
@@ -21,7 +24,7 @@
             <a href=""><img src="assets/svg/sleep.svg" alt="Sleep"/></a>
         </nav>
     </aside>
-    <main>
+    <main class="mainHomne">
         <div class="distance">
             <h2>Distance</h2>
             <canvas width="1350" height="200" id="myChart"></canvas>
@@ -32,9 +35,24 @@
             </div>
             
         </div>
-        <div class="calendar"></div>
-        <div class="daily"></div>
-        <div class="objective"></div>
+        <div class="calendar">
+            <img src="assets/svg/calendarContainer.svg" alt="">
+        </div>
+        <div class="daily">
+            <input type="text">
+            <ul class=toDoList>
+                <li>Fermer les portes</li>
+                <li>Arronser les plantes</li>
+                <li>Nourir le chat</li>
+            </ul>
+        </div>
+        <div class="objective">
+            <input type="text">
+                <ul class=toDoList>
+                    <li>6000 pas</li>
+                    <li>8h</li>
+                </ul>
+        </div>
         <div class="calc"></div>
         <div class="sleep">
             <h2 class="center">Sleep</h2>
@@ -60,11 +78,19 @@
                 </div> 
             </div>
         </div>
-        <div class="daily_sport"></div>
-        <div class="note"></div>
+        <div class="daily_sport">
+            <canvas id="goalBar" width="290" height="290"></canvas>
+            <p class="goalBartitle">Steps</p>
+            <p class="goalBartitle">Time</p>
+            <p class="goalBartitle">Distance</p>
+        </div>
+        <div class="note">
+            <img src="assets/svg/noteContainer.svg" alt="">
+        </div>
     </main>
     <script src="assets/js/distance.js"></script>
     <script src="assets/js/sleep.js"></script>
     <script src="assets/js/sport.js"></script>
+    <script src="assets/js/goalBar.js"></script>
 </body>
 </html>
