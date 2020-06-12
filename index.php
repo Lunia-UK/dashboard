@@ -14,9 +14,9 @@
     <header></header>
     <aside>
         <nav>
-            <a href=""><img src="assets/svg/home.svg" alt="Home"/></a>
-            <a href=""><img src="assets/svg/calendar.svg" alt="Calendar"/></a>
-            <a href=""><img src="assets/svg/bike.svg" alt="Sport"/></a>
+            <a href="index.php"><img src="assets/svg/home.svg" alt="Home"/></a>
+            <a href="calendar.html"><img src="assets/svg/calendar.svg" alt="Calendar"/></a>
+            <a href="sport.html"><img src="assets/svg/bike.svg" alt="Sport"/></a>
             <a href=""><img src="assets/svg/tasks.svg" alt="Tasks"/></a>
             <a href=""><img src="assets/svg/project.svg" alt="Projects"/></a>
             <a href=""><img src="assets/svg/challenge.svg" alt="Challenge"/></a>
@@ -24,7 +24,7 @@
             <a href=""><img src="assets/svg/sleep.svg" alt="Sleep"/></a>
         </nav>
     </aside>
-    <main class="mainHomne">
+    <main class="mainHome">
         <div class="distance">
             <h2>Distance</h2>
             <canvas width="1350" height="200" id="myChart"></canvas>
@@ -89,7 +89,6 @@
         </div>
     </main>
     <script src="assets/js/distance.js"></script>
-    <script src="assets/js/sleep.js"></script>
     <script src="assets/js/sport.js"></script>
     <script src="assets/js/goalBar.js"></script>
 </body>

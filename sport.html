@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <title>Sport</title>
+</head>
+<body>
+    <header></header>
+    <aside>
+        <nav>
+            <a href="index.php"><img src="assets/svg/home.svg" alt="Home"/></a>
+            <a href="calendar.html"><img src="assets/svg/calendar.svg" alt="Calendar"/></a>
+            <a href=""><img src="assets/svg/bike.svg" alt="Sport"/></a>
+            <a href=""><img src="assets/svg/tasks.svg" alt="Tasks"/></a>
+            <a href=""><img src="assets/svg/project.svg" alt="Projects"/></a>
+            <a href=""><img src="assets/svg/challenge.svg" alt="Challenge"/></a>
+            <a href=""><img src="assets/svg/note.svg" alt="Notes"/></a>
+            <a href=""><img src="assets/svg/sleep.svg" alt="Sleep"/></a>
+        </nav>
+    </aside>
+    <main class="mainSport">
+        <div class="distance">
+            <h2>Distance</h2>
+            <canvas width="1350" height="180" id="myChart" aria-label="Graph distance" role="img">Your browser does not support the canvas element.</canvas>
+        </div>
+        <div class="sport">
+            <div class="containerGraphSkills">
+                <div class="containerSkills">
+                    <div class="skills bike"></div>
+                    <img src="assets/svg/blueBike.svg" alt="Blue bike"/>
+                </div> 
+                <div class="containerSkills">
+                    <div class="skills walking"></div>
+                    <img src="assets/svg/walking.svg" alt="Walking"/>
+                </div>
+                <div class="containerSkills">
+                    <div class="skills medit"></div>
+                    <img src="assets/svg/medit.svg" alt="Meditation"/>
+                </div> 
+                <div class="containerSkills">
+                    <div class="skills running"></div>
+                    <img src="assets/svg/running.svg" alt="Running"/>
+                </div> 
+            </div>
+        </div>
+        <div class="daily_sport">
+            <canvas id="goalBar" width="290" height="290"></canvas>
+            <p class="goalBartitle">Steps</p>
+            <p class="goalBartitle">Time</p>
+            <p class="goalBartitle">Distance</p>
+        </div>
+        <div class="objective">
+            <input type="text">
+                <ul class=toDoList>
+                    <li>6000 pas</li>
+                    <li>8h</li>
+                </ul>
+        </div>
+        <div class="historic">
+            <h2>Activity history</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Date</td>
+                        <td>Activity</td>
+                        <td>Steps</td>
+                        <td>Distance</td>
+                        <td>Duration</td>
+                        <td>Calories</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>18 Oct, 4:30 pm</td>
+                        <td>Walk</td>
+                        <td>1.197</td>
+                        <td>3,36 kilometers</td>
+                        <td>1:36:26</td>
+                        <td>96 cals</td>
+                    </tr>
+                    <tr>
+                        <td>16 Oct, 1:54 pm</td>
+                        <td>Sport</td>
+                        <td>412</td>
+                        <td>2,45 kilometers</td>
+                        <td>11:48</td>
+                        <td>122 cals</td>
+                    </tr>
+                    <tr>
+                        <td>16 Oct, 3:32 pm</td>
+                        <td>Outdoor Bike</td>
+                        <td>N/A</td>
+                        <td>1,21 kilometers</td>
+                        <td>10:14</td>
+                        <td>250 cals</td>
+                    </tr>
+                    <tr>
+                        <td>14 Oct, 9:32 am</td>
+                        <td>Pilates</td>
+                        <td>13</td>
+                        <td>N/A</td>
+                        <td>5:27</td>
+                        <td>46 cals</td>
+                    </tr>
+                    <tr>
+                        <td>14 Oct, 4:19 pm</td>
+                        <td>Pilates</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>5:05</td>
+                        <td>50 cals</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="steps">
+            <h2>Steps</h2>
+            <canvas width="780" height="230" id="stepsGraph" aria-label="Graph steps" role="img">Your browser does not support the canvas element.</canvas>
+        </div>
+    </main>
+    <script src="assets/js/distance.js"></script>
+    <script src="assets/js/steps.js"></script>
+    <script src="assets/js/goalBar.js"></script>
+</body>
+</html>

@@ -68,7 +68,7 @@ main{
     justify-content: center;
     width: 92%;
 }
-.mainHomne{
+.mainHome{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -84,6 +84,26 @@ main{
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas:
             "distance" "alert" "calendar" "daily" "objective" "calc" "sleep" "sport" "daily_sport" "note" ;
+    }
+}
+
+.mainSport{
+    display: grid;
+    grid-template-columns: .8fr .8fr .8fr .8fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "distance distance distance distance"
+        "sport daily_sport objective objective"
+        "historic historic steps steps" ;
+}
+
+@media only screen and (max-width: 1200px){
+    main{
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "distance"  "objective" "sport" "daily_sport" "historic" "steps" ;
     }
 }
 
@@ -126,6 +146,16 @@ main{
     position: relative;
     display: flex;
     justify-content: center;
+}
+
+.historic{
+    grid-area: historic;
+    padding-right: 5%;
+}
+
+.steps{
+    grid-area: steps;
+    padding-right: 5%;
 }
 .daily_sport p {
     position: absolute;
@@ -195,7 +225,7 @@ h2{
     width: 100%;
     height: 80%;
     border-left: solid 1px #fff;
-    margin-left: 20%;
+    margin: 3%
 }
 
 .containerSkills {
@@ -296,4 +326,19 @@ input[type="text"]{
 #goalBar{
 
     transform: rotate(-90deg);
+}
+
+.historic table{
+    width: 100%;
+}
+.historic thead{
+    font-weight: bold;
+}
+.historic tr{
+    border-bottom: 2px solid #ffffff20
+}
+
+.historic td{
+    text-align: center;
+    padding: 10px;
 }

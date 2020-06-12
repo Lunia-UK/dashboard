@@ -7,12 +7,14 @@ gradient.addColorStop(1, 'rgba(0, 174, 255, 0)');
 
 
 var data  = {
-    labels: [ 'Jan','Feb','Mar','Apr','May','Jun','Jui','Aug','Sep','Oct','Nov','Dec' ],
+	labels: [ 'Jan','Feb','Mar','Apr','May','Jun','Jui','Aug','Sep','Oct','Nov','Dec' ],
+	
     datasets: [{
 			label: 'Distance',
 			backgroundColor: gradient,
 			borderWidth: 1,
 			borderColor: 'rgb(0, 174, 255)',
+			
 			data: [2,3,2,4,2.5,2.1,1.5,1.1,1.3,1.6,1.8,2]
     }]
 };
