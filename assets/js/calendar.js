@@ -33,9 +33,22 @@ function twoDigits(d) {
     if(-10 < d && d < 0) return "-0" + (-1*d).toString();
     return d.toString();
 }
-Date.prototype.toMysqlFormat = function() {
-    return this.getUTCFullYear() + "-" + twoDigits(1 + this.getUTCMonth()) + "-" + twoDigits(this.getUTCDate()) + " " + twoDigits(this.getUTCHours()) + ":" + twoDigits(this.getUTCMinutes()) + ":" + twoDigits(this.getUTCSeconds());
-};
+
+function toMySqlFormat(dateToChange) {
+    return dateToChange.getFullYear() + "-" +
+    twoDigits(1 + dateToChange.getMonth()) + "-" +
+    twoDigits(dateToChange.getDate()) + " " +
+    twoDigits(dateToChange.getHours()) + ":" +
+    twoDigits(dateToChange.getMinutes()) + ":" +
+    twoDigits(dateToChange.getSeconds());
+    //"00:00:00";
+}
+
+function el(id) {
+    with(document) {
+        return getElementById(id)||querySelector(id);
+    }
+}
 
 function saveData(e){
     if (e.keyCode == 13){
@@ -49,27 +62,67 @@ function saveData(e){
         }
         title = prompt("Title :");
         hour = prompt("Hour :", "18:00");
-        
         strDay = e.target.parentNode.innerHTML;
         strDay = strDay.substring(0,strDay.indexOf("<"));
         strMonthAndYear = document.getElementById("monthAndYear").innerHTML;
         dateTime = new Date(strDay + " " + strMonthAndYear + " " + hour);
-        xhr.open("GET","saveData.php?date=" + dateTime.toMysqlFormat() + "&title=" + title + "&description=" + e.target.innerHTML,true);
+        xhr.open("GET","saveData.php?date=" + toMySqlFormat(dateTime) + "&title=" + title + "&description=" + e.target.innerHTML,true);
         xhr.send();
     }
 }
 
 function loadData(dateBegin, dateEnd){
     xhr=new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if(xhr.readyState == 4) {
-             jsonData = xhr.responseText;
-             //arrData = JSON.parse(jsonData);
-             console.log(jsonData);
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState == 4) {
+            jsonData = xhr.response;
+            arrData = JSON.parse(jsonData);
+            table = el("calendar");
+            console.log(arrData);
+            console.log(dateBegin.getDay());
+            intDay = 1;
+            boolDay = false;
+            for(i=0;i<table.rows.length;i++) {
+                if(i>0){
+                    for(z=0; z<table.rows[i].cells.length; z++) {
+                        if(i==1 && z == dateBegin.getDay()) {
+                            boolDay = true;
+                        }
+                        if(boolDay) {
+                            table.rows[i].cells[z].innerHTML = intDay; 
+                            intDay++;
+                            divGlobal = document.createElement("div");
+                            divGlobal.classList.add("divGlobal");
+                            divGlobal.id = "divGlobal" + intDay;
+                            table.rows[i].cells[z].appendChild(divGlobal);
+                        }
+                    }
+                }
+            }
+            tdList=document.getElementsByTagName("td");
+            for(i=0;i<arrData.length;i++) {
+                eventDay=document.createElement("div");
+                eventDay.id=arrData[i][0];
+                eventDay.classList.add("eventDay");
+                dateToday=new Date(arrData[i][2]);
+                pTime=document.createElement("span");
+                pTime.innerHTML=twoDigits(dateToday.getHours())+":"+twoDigits(dateToday.getMinutes()) + " ";
+                pTitle=document.createElement("span");
+                pTitle.innerHTML=arrData[i][1];
+                eventDay.appendChild(pTime);
+                eventDay.appendChild(pTitle);
+                for(z=0;z<tdList.length;z++) {
+                    if(tdList[z].innerHTML.indexOf(dateToday.getDate())==0) {
+                        tdList[z].firstChild.nextSibling.appendChild(eventDay);
+                    }
+                }
             }
         }
-        xhr.open("GET","loadData.php?dateBegin=" + dateBegin.toMysqlFormat() + "&dateEnd= " + dateEnd.toMysqlFormat(),true);
-        xhr.send();
+    }
+    dateBeginSqlFormat = toMySqlFormat(dateBegin);
+    dateEndSqlFormat = toMySqlFormat(dateEnd);
+    xhr.open("GET","loadData.php?dateBegin=" + dateBeginSqlFormat + "&dateEnd= " + dateEndSqlFormat,true);
+    xhr.send();
 }
 
 function deleteData(e){
@@ -85,11 +138,20 @@ function deleteData(e){
         xhr.send();
 }
 
+function monthsDays(monthData){  
+    var d=new Date(
+        monthData.getFullYear(),
+        monthData.getMonth()+1,
+        0
+    );
+    return d.getDate();
+}
+
 function showCalendar(month, year) {
     let firstDay = (new Date(year, month)).getDay();
     let daysInMonth = 32 - new Date(year, month, 32).getDate();
-    dateBegin = new Date((month + 1) + " 1 " +  year);
-    dateEnd = new Date((month + 1) + " "  + daysInMonth + " " + year);
+    dateBegin = new Date(year + "-"+ (month + 1 ) + "-1");
+    dateEnd = new Date(year + "-" + (month + 1) + "-"  + monthsDays(dateBegin));
     loadData(dateBegin, dateEnd);
     let tbl = document.getElementById("calendar-body"); // body of the calendar
 
