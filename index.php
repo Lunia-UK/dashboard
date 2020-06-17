@@ -17,7 +17,7 @@
             <a href="index.php"><img src="assets/svg/home.svg" alt="Home"/></a>
             <a href="calendar.html"><img src="assets/svg/calendar.svg" alt="Calendar"/></a>
             <a href="sport.html"><img src="assets/svg/bike.svg" alt="Sport"/></a>
-            <a href=""><img src="assets/svg/tasks.svg" alt="Tasks"/></a>
+            <a href="tasks.html"><img src="assets/svg/tasks.svg" alt="Tasks"/></a>
             <a href=""><img src="assets/svg/project.svg" alt="Projects"/></a>
             <a href=""><img src="assets/svg/challenge.svg" alt="Challenge"/></a>
             <a href=""><img src="assets/svg/note.svg" alt="Notes"/></a>
@@ -38,20 +38,15 @@
         <div class="calendar">
             <img src="assets/svg/calendarContainer.svg" alt="">
         </div>
-        <div class="daily">
-            <input type="text">
-            <ul class=toDoList>
-                <li>Fermer les portes</li>
-                <li>Arronser les plantes</li>
-                <li>Nourir le chat</li>
-            </ul>
+        <div class="daily" id="daily">
+                <h2 class="center">To do</h2>
+                <input type="text" id="dailyTaskInput">
+                <ul class="toDoList" id="dailyList"></ul>
         </div>
         <div class="objective">
-            <input type="text">
-                <ul class=toDoList>
-                    <li>6000 pas</li>
-                    <li>8h</li>
-                </ul>
+            <h2 class="center">Objectif</h2>
+            <input type="text" id="dailyTaskInput">
+            <ul class="toDoList" id="objectifList"></ul>
         </div>
         <div class="calc"></div>
         <div class="sleep">
@@ -86,10 +81,17 @@
         </div>
         <div class="note">
             <img src="assets/svg/noteContainer.svg" alt="">
+            <div class="containerNote">
+                <input type="text" id="titleAddNote">
+                <textarea name="" id="textAddNote" cols="25" rows="10"></textarea>
+            </div>
         </div>
     </main>
     <script src="assets/js/distance.js"></script>
-    <script src="assets/js/sport.js"></script>
+    <script src="assets/js/sleep.js"></script>
     <script src="assets/js/goalBar.js"></script>
+    <script src="assets/js/daily-task.js"></script>
+    <script src="assets/js/objectif.js"></script>
+    <script src="assets/js/addNote.js"></script>
 </body>
 </html>

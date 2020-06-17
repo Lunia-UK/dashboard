@@ -53,10 +53,14 @@ body{
     box-sizing: border-box;
     display: flex;
     flex-flow: row wrap;
-    background: url(../img/background.png);
+    background-color: #0A1420;
+    background-image: 
+    url(../img/grid.png),
+    linear-gradient(237.77deg, #050b14, #001329);
+    background-size: cover;
     color: #fff;
     font-family: sans-serif;
-    scrollbar-color: #fff #53B9FC;
+    scrollbar-color: #fff #050b14;
     scrollbar-width: thin;
 }
 
@@ -137,10 +141,12 @@ main{
 
 .daily{
     grid-area: daily;
+    padding: 0 5%;
 }
 
 .objective{
     grid-area: objective;
+    padding: 0 5%;
 }
 
 .calc{
@@ -195,6 +201,22 @@ main{
     grid-area: note;
     display: flex;
     justify-content: center;
+}
+.note .containerNote{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1%;
+}
+
+.containerNote input, .containerNote textarea{
+    background: none;
+    border: none; 
+    resize: none;
+    margin: 5% 0;
+    color: #fff;
+    scrollbar-color: #fff #e5e380;
+    scrollbar-width: thin;
 }
 
 nav {
@@ -279,7 +301,11 @@ input[type="text"]{
     border-bottom: 1px solid #fff;
 }
   .toDoList{
-    width: 80%;
+    display: block;
+    width: 100%;
+    height: 230px;
+    overflow-y: auto;
+    scrollbar-width: thin;
 }
 
   .toDoList li{
