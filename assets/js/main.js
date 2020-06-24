@@ -13,8 +13,6 @@ ajaxWorker.onmessage=function(e) {
             jsonData = e.data.jsonData;
             arrData=e.data.arrData;
             console.log(arrData);
-            //t1 = performance.now();
-            //console.log("L'appel à faireQuelqueChose a pris " + (t1 - t0) + " millisecondes.")
             ul = document.querySelector("#" + arrData[0]);
             console.log(arrData[0]);
             for(i=0;i<jsonData.length;i++){
@@ -25,17 +23,18 @@ ajaxWorker.onmessage=function(e) {
                 aClose.innerHTML="X";
                 aClose.id=jsonData[i][0];
                 aClose.classList.add("deletedEvent");
-                //aClose.addEventListener('click', deleteData);
+                aClose.addEventListener('click', deleteData);
                 li.appendChild(aClose);
                 ul.appendChild(li);
             }
             break;
     
         case "saveData":
-            
+            clearData()
+            loadData();
         break;
 
-        case "loadData":
+        case "deleteData":
         
         break;
         default:
@@ -44,8 +43,19 @@ ajaxWorker.onmessage=function(e) {
 }
     window.onload = function (){
     getData('loadData','../php/manageData.php',['objectif']);
-    window.setTimeout("getData('loadData','../php/manageData.php',['daily_task'])", 12000)
+    window.setTimeout("getData('loadData','../php/manageData.php',['daily_task'])", 120)
     };
 
+    function checkEnterKey(e){
+        if(e.keyCode == 13){
+            element = input.value;
+            getData('saveData','../php/manageData.php', element)  
+        }
+    }
+    input = document.querySelector("#dailyTaskInput");
+    input.addEventListener("keypress", checkEnterKey);
 
-    
+    function deleteData(e){
+        id = e.target.id;
+        getData('deleteData','../php/manageData.php', id)
+    }
