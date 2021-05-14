@@ -78,15 +78,12 @@ class FirstComponent extends React.Component {
         const { deltaXyPos } = this.state;
 
         return (
-            <div>
-                <Draggable grid={[25, 25]} handle="strong" {...dragHandlers}>
-                    <div className="box no-cursor">
-                        <strong className="cursor"></strong>
-                        <div>Hello here ! </div>
-                    </div>
-                </Draggable>
-            </div>
-
+            <Draggable grid={[25, 25]} handle="strong" bounds="parent" {...dragHandlers}>
+                <div className="box no-cursor">
+                    <strong className="cursor"></strong>
+                    <div>Hello here ! </div>
+                </div>
+            </Draggable>
         );
     }
 }

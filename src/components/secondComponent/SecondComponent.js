@@ -78,20 +78,12 @@ class SecondComponent extends React.Component {
         const { deltaXyPos } = this.state;
 
         return (
-            <div>
-                <Draggable handle="strong" {...dragHandlers}>
-                    <div className="box no-cursor">
-                        <strong className="cursor"></strong>
-                        <div>Hello here ! </div>
-                    </div>
-                </Draggable>
-                <Draggable defaultPosition={{x: 100, y: 150}} {...dragHandlers}>
-                    <div className="box">
-                        {"I have a default position of {x: 25, y: 25}, so I'm slightly offset."}
-                    </div>
-                </Draggable>
-            </div>
-
+            <Draggable handle="strong" bounds="parent" {...dragHandlers}>
+                <div className="box no-cursor">
+                    <strong className="cursor"></strong>
+                    <div>Hello here ! </div>
+                </div>
+            </Draggable>
         );
     }
 }
