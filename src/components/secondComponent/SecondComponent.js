@@ -81,7 +81,7 @@ class SecondComponent extends React.Component {
             <Draggable handle="strong" bounds="parent" {...dragHandlers}>
                 <div className="box no-cursor">
                     <strong className="cursor"></strong>
-                    <div>Hello here ! </div>
+                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, dolor impedit molestias perspiciatis quas quibusdam quos. Accusamus adipisci commodi corporis exercitationem possimus veritatis. Aliquid est nesciunt possimus, quia veniam voluptate!</div>
                 </div>
             </Draggable>
         );

@@ -15,16 +15,6 @@
     cursor: ew-resize;
 }
 
-/*.react-draggable strong {*/
-/*    background: #ddd;*/
-/*    border: 1px solid #999;*/
-/*    border-radius: 3px;*/
-/*    display: block;*/
-/*    margin-bottom: 10px;*/
-/*    padding: 6px 5px;*/
-/*    text-align: center;*/
-/*}*/
-
 .react-draggable strong {
     position: absolute;
     top:0;
@@ -32,22 +22,27 @@
     display: block;
     width: 0;
     height: 0;
-    border-top: 15px solid #97cecb;
-    border-left: 15px solid transparent;
+    border-top: 20px solid #97cecb;
+    border-left: 20px solid transparent;
+    opacity: 0;
+    transition: .3s;
 }
-
 
 .box {
     background: #fff;
     border: 1px solid #999;
     box-shadow:  #c9c9c9 1px 3px 3px 0px;
     border-radius: 3px;
-    width: 180px;
-    height: 180px;
+    padding: 1% 2%;
+    max-width: 250px;
     margin: 10px;
-    padding: 10px;
     float: left;
 }
+
+.box:hover strong {
+    opacity: 1;
+}
+
 .no-pointer-events {
     pointer-events: none;
 }
