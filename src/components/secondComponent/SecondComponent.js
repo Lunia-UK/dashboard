@@ -1,8 +1,8 @@
-import './firstComponent.css';
+import './secondComponent.css';
 import React from 'react';
 import Draggable from 'react-draggable';
 
-class FirstComponent extends React.Component {
+class SecondComponent extends React.Component {
     state = {
         activeDrags: 0,
         deltaPosition: {
@@ -79,10 +79,15 @@ class FirstComponent extends React.Component {
 
         return (
             <div>
-                <Draggable grid={[25, 25]} handle="strong" {...dragHandlers}>
+                <Draggable handle="strong" {...dragHandlers}>
                     <div className="box no-cursor">
                         <strong className="cursor"></strong>
                         <div>Hello here ! </div>
+                    </div>
+                </Draggable>
+                <Draggable defaultPosition={{x: 100, y: 150}} {...dragHandlers}>
+                    <div className="box">
+                        {"I have a default position of {x: 25, y: 25}, so I'm slightly offset."}
                     </div>
                 </Draggable>
             </div>
@@ -91,4 +96,4 @@ class FirstComponent extends React.Component {
     }
 }
 
-export default FirstComponent;
+export default SecondComponent;
